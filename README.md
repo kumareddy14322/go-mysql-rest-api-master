@@ -1,17 +1,75 @@
-# go-mysql-rest-api
-A guide for creating RESTful API with Golang and MySQL and Gin.
+# Simple GO Lang REST API
 
-Create a Database called Gotest
-then run
+> Simple RESTful API to create, read, update and delete books. No database implementation yet
 
-  $ ./migrate
+## Quick Start
 
-to Person table to be created
 
-After download gitter.gz, extract it. You will recieve an executable.
-Run that executable and your API server will be up and running
+``` bash
+# Install mux router
+go get -u github.com/gorilla/mux
+```
 
-  $ ./gitter
+``` bash
+go build
+./go_restapi
+```
 
-No need of Go installed. That is the beauty.
+## Endpoints
 
+### Get All Books
+``` bash
+GET api/books
+```
+### Get Single Book
+``` bash
+GET api/books/{id}
+```
+
+### Delete Book
+``` bash
+DELETE api/books/{id}
+```
+
+### Create Book
+``` bash
+POST api/books
+
+# Request sample
+# {
+#   "isbn":"4545454",
+#   "title":"Book Three",
+#   "author":{"firstname":"Harry",  "lastname":"White"}
+# }
+```
+
+### Update Book
+``` bash
+PUT api/books/{id}
+
+# Request sample
+# {
+#   "isbn":"4545454",
+#   "title":"Updated Title",
+#   "author":{"firstname":"Harry",  "lastname":"White"}
+# }
+
+```
+
+
+```
+
+## App Info
+
+### Author
+
+Brad Traversy
+[Traversy Media](http://www.traversymedia.com)
+
+### Version
+
+1.0.0
+
+### License
+
+This project is licensed under the MIT License
